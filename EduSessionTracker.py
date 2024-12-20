@@ -20,13 +20,13 @@ end_time = st.selectbox("結束時間", generate_time_options())
 
 # 學年度與學期選擇
 school_year = st.selectbox("學年度", ["110", "111", "112", "113", "114", "115"])
-semester = st.selectbox("學期", ["第一學期", "第二學期"])
+semester = st.selectbox("學期", ["一", "二"])
 
 # 學生姓名輸入
 student_name = st.text_input("學生姓名")
 
 # 補課進度輸入
-progress = st.text_area("補課進度", placeholder="例如: 完成第3章，第4章習題1-5題")
+progress = st.text_area("課程進度", placeholder="例如: 完成第3章，第4章習題1-5題")
 
 # 今日課程內容
 content = st.text_area("今日內容", placeholder="例如: 講解第3章重點，分析題型")
@@ -47,7 +47,7 @@ performance = st.text_area("學生表現", placeholder="例如: 理解力良好�
 suggestion = st.text_area("備註", placeholder="例如: 建議每日閱讀練習30分鐘")
 
 # 下次補課安排
-next_class_date = st.date_input("下次補課日期", value=None)
+next_class_date = st.date_input("下次上課安排", value=None)
 
 # 聯絡簿
 contact_book_signature = st.selectbox("聯絡簿", ["已簽名", "未簽名", "未帶"])
@@ -93,7 +93,7 @@ if st.button("生成回報訊息", key="generate_report"):
     report = f"""
 =====狀況回報訊息=====
 日期: {date} ({weekday_chinese})
-學年度: {school_year}學年度 {semester}
+學年度: {school_year}學年度 第{semester}學期
 年段: {grade}
 時段: {start_time} ~ {end_time}
 時數: {hours} 小時
