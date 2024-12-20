@@ -128,4 +128,4 @@ if st.button("生成回報訊息", key="generate_report"):
     # 新增一鍵複製按鈕
     st.write("點擊下方按鈕一鍵複製回報訊息：")
     st.code(report)
-    st.button("複製回報訊息", on_click=lambda: st.experimental_set_query_params(report=report))
+    st.button("複製回報訊息", on_click=lambda: st.text_input("複製回報訊息", value=report, key="copied_report"))
