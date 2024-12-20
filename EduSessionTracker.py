@@ -91,34 +91,41 @@ if st.button("生成回報訊息", key="generate_report"):
         next_class_str = "(備註)"
     
     report = f"""
-    =====狀況回報訊息=====
-    日期: {date} ({weekday_chinese})
-    學年度: {school_year}學年度 {semester}
-    年段: {grade}
-    補課時段: {start_time} ~ {end_time}
-    補課時數: {hours} 小時
+=====狀況回報訊息=====
+日期: {date} ({weekday_chinese})
+學年度: {school_year}學年度 {semester}
+年段: {grade}
+補課時段: {start_time} ~ {end_time}
+補課時數: {hours} 小時
+
+補課學生: {student_name}
+補課進度: {progress}
+
+今日課程內容:
+{content}
+
+指派作業:
+{homework}
+
+考試範圍: {exam_range if exam_range else "無"}
+考試成績: {exam_score if exam_score else "無"}
+
+學生表現:
+{performance}
+
+聯絡簿簽名: {contact_book_signature}
+上次回家作業: {homework_brought}
+
+備註:
+{suggestion}
+
+下次補課安排: {next_class_str}
+    """.strip()
     
-    補課學生: {student_name}
-    補課進度: {progress}
-    
-    今日課程內容:
-    {content}
-    
-    指派作業:
-    {homework}
-    
-    考試範圍: {exam_range if exam_range else "無"}
-    考試成績: {exam_score if exam_score else "無"}
-    
-    學生表現:
-    {performance}
-    
-    聯絡簿簽名: {contact_book_signature}
-    上次回家作業: {homework_brought}
-    
-    備註:
-    {suggestion}
-    
-    下次補課安排: {next_class_str}
-    """
+    # 顯示訊息
     st.text_area("生成的回報訊息", report, height=300)
+
+    # 新增一鍵複製按鈕
+    st.write("點擊下方按鈕一鍵複製回報訊息：")
+    st.code(report)
+    st.button("複製回報訊息", on_click=lambda: st.experimental_set_query_params(report=report))
