@@ -95,13 +95,13 @@ if st.button("生成回報訊息", key="generate_report"):
 日期: {date} ({weekday_chinese})
 學年度: {school_year}學年度 {semester}
 年段: {grade}
-補課時段: {start_time} ~ {end_time}
-補課時數: {hours} 小時
+時段: {start_time} ~ {end_time}
+時數: {hours} 小時
 
-補課學生: {student_name}
-補課進度: {progress}
+學生姓名: {student_name}
+課程進度: {progress}
 
-今日課程內容:
+今日內容:
 {content}
 
 指派作業:
