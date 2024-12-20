@@ -113,13 +113,13 @@ if st.button("生成回報訊息", key="generate_report"):
 學生表現:
 {performance}
 
-聯絡簿簽名: {contact_book_signature}
+聯絡簿: {contact_book_signature}
 上次回家作業: {homework_brought}
 
 備註:
 {suggestion}
 
-下次補課安排: {next_class_str}
+下次上課安排: {next_class_str}
     """.strip()
     
     # 顯示訊息
