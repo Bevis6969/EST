@@ -2,7 +2,7 @@ import streamlit as st
 import datetime
 
 # 標題
-st.title("EduSessionTracker")
+st.markdown("<h1 style='text-align: center;'>EduSessionTracker</h1>", unsafe_allow_html=True)
 
 # 日期選擇器
 date = st.date_input("日期", value=datetime.date.today())
