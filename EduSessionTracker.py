@@ -101,9 +101,9 @@ if st.button("生成回報訊息", key="generate_report"):
 學生姓名: {student_name}
 課程進度: {progress}
 
-今日內容:{content}
+今日內容: {content}
 
-指派作業:{homework if homework else "無"}
+指派作業: {homework if homework else "無"}
 
 考試範圍: {exam_range if exam_range else "無"}
 考試成績: {exam_score if exam_score else "無"}
