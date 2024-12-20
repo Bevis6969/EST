@@ -125,7 +125,11 @@ if st.button("生成回報訊息", key="generate_report"):
     # 顯示訊息
     st.text_area("生成的回報訊息", report, height=300)
 
-    # 新增一鍵複製按鈕
-    st.write("點擊下方按鈕一鍵複製回報訊息：")
-    st.code(report)
-    st.button("複製回報訊息", on_click=lambda: st.text_input("複製回報訊息", value=report, key="copied_report"))
+    # 使用 HTML 和 JavaScript 來實現複製功能
+    html_code = f"""
+    <button onclick="navigator.clipboard.writeText(`{report.replace('`', '')}`)">
+        點擊複製回報訊息
+    </button>
+    <p>請點擊上面按鈕複製回報訊息</p>
+    """
+    st.markdown(html_code, unsafe_allow_html=True)
